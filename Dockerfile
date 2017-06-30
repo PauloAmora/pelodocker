@@ -2,13 +2,7 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get -y install python-dev software-properties-common python-software-properties git java
 
-RUN apt-add-repository ppa:webupd8team/java && apt-get update && apt-get install oracle-java8-installer
-
 RUN git clone http://github.com/cmu-db/peloton
-
-RUN git clone http://github.com/oltpbenchmark/oltpbench
-
-RUN export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 RUN /bin/bash -c "source ./peloton/script/installation/packages.sh"
 
